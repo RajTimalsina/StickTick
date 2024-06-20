@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -46,7 +50,73 @@
 
       <div class="inbox-content">
         <h1 class="inbox">Inbox</h1>
+
+        <div class="task-input">
+          <input type="text" placeholder="Add a new task" class="input-box" />
+          <button class="clear-btn">Clear</button>
+        </div>
+        <img src="./images/bars-icon.svg" alt="icon" class="bars" />
+
+        <div class="controls">
+          <!-- <div class="labels">
+            <span id="all">All</span>
+            <span id="pending">All</span>
+            <span id="completed">All</span>
+            <span id="upcoming">All</span>
+            <span id="today">All</span>
+          </div> -->
+        </div>
+        <ul class="task-box">
+          <li class="task">
+            <label for="1" class="task">
+              <input type="checkbox" name="" id="1" class="checkbox" />
+              <p class="task">Some tasks</p>
+            </label>
+            <div class="settings">
+              <i class="uil uil-ellipsis-h"></i>
+              <ul class="task-menu">
+                <li><i class="uil uil-pen"></i>Edit</li>
+                <hr class="uil" />
+                <li><i class="uil uil-trash"></i>Delete</li>
+              </ul>
+            </div>
+          </li>
+          <li class="task">
+            <label for="1" class="task">
+              <input type="checkbox" name="" id="1" class="checkbox" />
+              <p class="task">Some tasks</p>
+            </label>
+            <div class="settings">
+              <i class="uil uil-ellipsis-h"></i>
+            </div>
+          </li>
+          <li class="task">
+            <label for="1" class="task">
+              <input type="checkbox" name="" id="1" class="checkbox" />
+              <p class="task">Some tasks</p>
+            </label>
+            <div class="settings">
+              <i class="uil uil-ellipsis-h"></i>
+            </div>
+          </li>
+          <li class="task" class="task">
+            <label for="1" class="task">
+              <input type="checkbox" name="" id="1" class="checkbox" />
+              <p class="task">Some tasks</p>
+            </label>
+            <div class="settings">
+              <i class="uil uil-ellipsis-h"></i>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
   </body>
 </html>
