@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StickTick</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/StickTick.png"
+      sizes="32x32"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
-      rel="stylesheet"
-    />
+
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
@@ -20,16 +23,11 @@
     <div class="container">
       <aside>
         <div class="profile">
-          <img
-            src="./images/profile-pic.jpg"
-            alt="profile-pic"
-            width="auto"
-            id="profile"
-          />
+          <img src="./images/profile-pic.jpg" alt="profile-pic" />
           <p class="profile">Raj</p>
         </div>
 
-        <hr />
+        <hr class="aside" />
 
         <ul class="sidebar">
           <li class="inbox">
@@ -50,31 +48,32 @@
 
       <div class="inbox-content">
         <h1 class="inbox">Inbox</h1>
-
-        <div class="task-input">
-          <input type="text" placeholder="Add a new task" class="input-box" />
-        </div>
-        <img src="./images/bars-icon.svg" alt="icon" class="bars" />
-
-        <div class="controls">
-          <div class="filters">
-            <span id="all" class="active">All</span>
-            <span id="pending">Pending</span>
-            <span id="completed">Completed</span>
+        <div class="task-card">
+          <div class="task-input">
+            <input type="text" placeholder="Add a new task" class="input-box" />
+            <img src="./images/bars-icon.svg" alt="icon" class="bars" />
           </div>
-          <div class="clear">
-            <img
-              src="./images/delete-2-svgrepo-com.svg"
-              alt="trash"
-              class="clear"
-              height="25px"
-            />
-            <button class="clear-btn">Clear</button>
-          </div>
-        </div>
-        <hr id="labels" />
 
-        <ul class="task-box"></ul>
+          <div class="controls">
+            <div class="filters">
+              <span id="all" class="active">All</span>
+              <span id="pending">Pending</span>
+              <span id="completed">Completed</span>
+            </div>
+            <div class="clear">
+              <img
+                src="./images/delete-2-svgrepo-com.svg"
+                alt="trash"
+                class="clear"
+                height="20px"
+              />
+              <button class="clear-btn">Clear</button>
+            </div>
+          </div>
+          <hr id="labels" />
+
+          <ul class="task-box"></ul>
+        </div>
       </div>
     </div>
     <!-- <script

@@ -21,11 +21,41 @@ clearAll.addEventListener("click", () => {
   showTodo("all");
 });
 
+// function showTodo(filter) {
+//   let li = "";
+
+//   if (todos) {
+//     todos.forEach((todo, id) => {
+//       let isCompleted = todo.status == "completed" ? "checked" : "";
+//       if (filter == todo.status || filter == "all") {
+//         li += `<li class="task">
+//                 <label for="${id}" class="task">
+//                   <input onclick="updateStatus(this)" type="checkbox" name="" id="${id}" class="checkbox" ${isCompleted} />
+//                   <p class="${isCompleted}">${todo.name}</p>
+//                 </label>
+//                 <div class="settings">
+//                   <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+//                   <ul class="task-menu">
+//                     <li onclick="editTask(${id}, '${todo.name}')"><i class="uil uil-pen"></i>Edit</li>
+//                     <hr class="uil" />
+//                     <li onclick="deleteTask(${id})"><i class="uil uil-trash"></i>Delete</li>
+//                   </ul>
+//                 </div>
+//               </li>`;
+//       }
+//     });
+//   }
+
+//   taskBox.innerHTML = li || `<span class="emptyTask">No Task Here :)</span>`;
+// }
+
 function showTodo(filter) {
   let li = "";
 
   if (todos) {
-    todos.forEach((todo, id) => {
+    // Iterate from end to start
+    for (let id = todos.length - 1; id >= 0; id--) {
+      let todo = todos[id];
       let isCompleted = todo.status == "completed" ? "checked" : "";
       if (filter == todo.status || filter == "all") {
         li += `<li class="task">
@@ -37,13 +67,13 @@ function showTodo(filter) {
                   <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                   <ul class="task-menu">
                     <li onclick="editTask(${id}, '${todo.name}')"><i class="uil uil-pen"></i>Edit</li>
-                    <hr class="uil" />
+                    <hr id="uil" />
                     <li onclick="deleteTask(${id})"><i class="uil uil-trash"></i>Delete</li>
                   </ul>
                 </div>
               </li>`;
       }
-    });
+    }
   }
 
   taskBox.innerHTML = li || `<span class="emptyTask">No Task Here :)</span>`;
@@ -102,3 +132,17 @@ taskInput.addEventListener("keyup", (e) => {
     showTodo("all");
   }
 });
+
+// function counter() {
+//   var count = todos.length;
+//   console.log(count);
+// }
+
+// function counterUp() {
+//   count++;
+//   console.log(count);
+// }
+// function counterDown() {
+//   count--;
+//   console.log(count);
+// }
