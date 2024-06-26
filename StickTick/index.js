@@ -6,7 +6,12 @@ let isEditedTask = false;
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 clearAll = document.querySelector(".clear-btn");
 all = document.querySelector(".filter#all");
+var countAll = todos.length;
+var countPending;
 
+allCount = document.querySelector(".count-all");
+
+counterShow();
 filters.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector("span.active").classList.remove("active");
@@ -19,6 +24,8 @@ clearAll.addEventListener("click", () => {
   todos.splice(0, todos.length);
   localStorage.setItem("todo-list", JSON.stringify(todos));
   showTodo("all");
+  countAll = 0;
+  counterShow();
 });
 
 // function showTodo(filter) {
@@ -51,9 +58,7 @@ clearAll.addEventListener("click", () => {
 
 function showTodo(filter) {
   let li = "";
-
   if (todos) {
-    // Iterate from end to start
     for (let id = todos.length - 1; id >= 0; id--) {
       let todo = todos[id];
       let isCompleted = todo.status == "completed" ? "checked" : "";
@@ -67,7 +72,7 @@ function showTodo(filter) {
                   <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                   <ul class="task-menu">
                     <li onclick="editTask(${id}, '${todo.name}')"><i class="uil uil-pen"></i>Edit</li>
-                    <hr id="uil" />
+                    <hr class="uil" />
                     <li onclick="deleteTask(${id})"><i class="uil uil-trash"></i>Delete</li>
                   </ul>
                 </div>
@@ -99,6 +104,7 @@ function deleteTask(deleteId) {
   todos.splice(deleteId, 1);
   localStorage.setItem("todo-list", JSON.stringify(todos));
   showTodo("all");
+  counterDown();
 }
 
 function updateStatus(seclectedTask) {
@@ -110,6 +116,7 @@ function updateStatus(seclectedTask) {
     taskName.classList.remove("checked");
     todos[seclectedTask.id].status = "pending";
   }
+
   localStorage.setItem("todo-list", JSON.stringify(todos));
 }
 showTodo("all");
@@ -122,6 +129,7 @@ taskInput.addEventListener("keyup", (e) => {
       }
       let taskInfo = { name: userTask, status: "pending" };
       todos.push(taskInfo);
+      counterUp();
     } else {
       isEditedTask = false;
       todos[editId].name = userTask;
@@ -133,16 +141,19 @@ taskInput.addEventListener("keyup", (e) => {
   }
 });
 
-// function counter() {
-//   var count = todos.length;
-//   console.log(count);
-// }
+function counterUp() {
+  countAll++;
+  counterShow();
+}
+function counterDown() {
+  countAll--;
+  counterShow();
+}
+function counterShow() {
+  allCount.innerHTML = countAll;
+}
 
-// function counterUp() {
-//   count++;
-//   console.log(count);
-// }
-// function counterDown() {
-//   count--;
-//   console.log(count);
-// }
+var pending = taskBox.getElementsByTagName("li");
+
+countPending = pending.length / 3;
+console.log(pending);

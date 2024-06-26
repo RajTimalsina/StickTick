@@ -285,3 +285,17 @@ span.emptyTask {
   border-radius: 15px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
+
+p.count-all {
+  background-color: var(--secondary);
+  border-radius: 50%;
+  height: 5%;
+  width: auto;
+  padding-left: 1%;
+  padding-right: 1%;
+  display: inline-block;
+}
+
+hr.uil {
+  border: 1px solid var(--primary);
+}
