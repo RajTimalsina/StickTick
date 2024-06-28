@@ -52,6 +52,7 @@ ul.sidebar {
   list-style-type: none;
   background-color: var(--secondary);
   width: auto;
+  cursor: pointer;
 }
 
 .sidebar li {
@@ -298,4 +299,16 @@ p.counter {
 
 hr.uil {
   border: 1px solid var(--primary);
+}
+
+.sidebar .active {
+  padding: 5%;
+  width: 90%;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 255, 102, 0.2);
+  transition: border 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: border-radius 0.3s ease;
+  transition: padding 0.3s ease;
 }

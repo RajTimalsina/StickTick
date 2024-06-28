@@ -1,82 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StickTick</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/StickTick.png"
+      sizes="32x32"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StickTick</title>
-  <link rel="icon" type="image/x-icon" href="/images/StickTick.png" sizes="32x32" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+  </head>
 
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
-</head>
-
-<body>
-  <div class="container">
-    <aside>
-      <div class="profile">
-        <img src="./images/profile-pic.jpg" alt="profile-pic" />
-        <p class="profile">Raj</p>
-      </div>
-
-      <hr class="aside" />
-
-      <ul class="sidebar">
-        <li class="inbox">
-          <img src="./images/inbox.svg" alt="inbox" />
-          Inbox
-        </li>
-        <li class="today">
-          <img src="./images/today.svg" alt="today" /> Today
-        </li>
-        <li class="upcoming">
-          <img src="./images/calender.svg" alt="upcoming" /> Upcoming
-        </li>
-        <li class="label">
-          <img src="./images/label.svg" alt="label" /> label
-        </li>
-      </ul>
-    </aside>
-
-    <div class="inbox-content">
-      <h1 class="inbox">Inbox</h1>
-      <div class="task-card">
-        <div class="task-input">
-          <input type="text" placeholder="Add a new task" class="input-box" />
-          <img src="./images/bars-icon.svg" alt="icon" class="bars" />
+  <body>
+    <div class="container">
+      <aside>
+        <div class="profile">
+          <img src="./images/profile-pic.jpg" alt="profile-pic" />
+          <p class="profile">Raj</p>
         </div>
 
-        <div class="controls">
-          <div class="filters">
-            <span id="all" class="active">All
-              <p class="count-all counter"></p>
-            </span>
-            <span id="pending">Pending
-              <p class="count-pending counter"></p>
-            </span>
-            <span id="completed">Completed
-              <p class="count-completed counter"></p>
-            </span>
-          </div>
-          <div class="clear">
-            <img src="./images/delete-2-svgrepo-com.svg" alt="trash" class="clear" height="20px" />
-            <button class="clear-btn">Clear</button>
-          </div>
-        </div>
-        <hr id="labels" />
+        <hr class="aside" />
 
-        <ul class="task-box"></ul>
+        <ul class="sidebar">
+          <li class="inbox active">
+            <img src="./images/inbox.svg" alt="inbox" />
+            Inbox
+          </li>
+          <li class="today">
+            <img src="./images/today.svg" alt="today" /> Today
+          </li>
+          <li class="upcoming">
+            <img src="./images/calender.svg" alt="upcoming" /> Upcoming
+          </li>
+          <li class="label">
+            <img src="./images/label.svg" alt="label" /> label
+          </li>
+        </ul>
+      </aside>
+
+      <div class="inbox-content">
+        <h1 class="inbox">Inbox</h1>
+        <div class="task-card">
+          <div class="task-input">
+            <input type="text" placeholder="Add a new task" class="input-box" />
+            <img src="./images/bars-icon.svg" alt="icon" class="bars" />
+          </div>
+
+          <div class="controls">
+            <div class="filters">
+              <span id="all" class="active"
+                >All
+                <p class="count-all counter"></p>
+              </span>
+              <span id="pending"
+                >Pending
+                <p class="count-pending counter"></p>
+              </span>
+              <span id="completed"
+                >Completed
+                <p class="count-completed counter"></p>
+              </span>
+            </div>
+            <div class="clear">
+              <img
+                src="./images/delete-2-svgrepo-com.svg"
+                alt="trash"
+                class="clear"
+                height="20px"
+              />
+              <button class="clear-btn">Clear</button>
+            </div>
+          </div>
+          <hr id="labels" />
+
+          <ul class="task-box"></ul>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.7.1.js"
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
       crossorigin="anonymous"
     ></script> -->
-  <script src="index.js"></script>
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>

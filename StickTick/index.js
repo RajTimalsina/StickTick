@@ -9,26 +9,28 @@ let all = document.querySelector(".filter#all");
 var countAll = todos.length;
 var countPending = 0;
 var countCompleted = 0;
+let sidebar = document.querySelectorAll(".sidebar li");
 
+sidebar.forEach((sid) => {
+  sid.addEventListener("click", () => {
+    document.querySelector(".sidebar li.active").classList.remove("active");
+    sid.classList.add("active");
+  });
+});
 
-
-// counts number of completed and pending works
-for (let i = 0; i < todos.length; i++){
-  if (todos[i].status == "pending"){
+for (let i = 0; i < todos.length; i++) {
+  if (todos[i].status == "pending") {
     countPending++;
-  }
-  else{
+  } else {
     countCompleted++;
   }
-
 }
 
 let allCount = document.querySelector(".count-all");
 let pendingCount = document.querySelector(".count-pending");
 let completedCount = document.querySelector(".count-completed");
-
-
 counterShow();
+
 filters.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector("span.active").classList.remove("active");
@@ -38,7 +40,7 @@ filters.forEach((btn) => {
 });
 
 clearAll.addEventListener("click", () => {
-  todos = []
+  todos = [];
   localStorage.setItem("todo-list", JSON.stringify(todos));
   showTodo("all");
   countAll = 0;
@@ -46,7 +48,6 @@ clearAll.addEventListener("click", () => {
   countCompleted = 0;
   counterShow();
 });
-
 
 function showTodo(filter) {
   let li = "";
@@ -96,21 +97,19 @@ function deleteTask(deleteId) {
   let removedItem = todos.splice(deleteId, 1);
   localStorage.setItem("todo-list", JSON.stringify(todos));
   showTodo("all");
-  if (removedItem[0].status == 'pending') {
+  if (removedItem[0].status == "pending") {
     updateCounter(-1, -1, 0);
-  }
-  else{
+  } else {
     updateCounter(-1, 0, -1);
   }
 }
 
 function updateStatus(selectedTask) {
   let taskName = selectedTask.parentElement.lastElementChild;
-  console.log(selectedTask.checked)
+  console.log(selectedTask.checked);
   if (selectedTask.checked) {
     taskName.classList.add("checked");
     todos[selectedTask.id].status = "completed";
-    console.log("Hello")
     updateCounter(0, -1, 1);
   } else {
     taskName.classList.remove("checked");
@@ -120,7 +119,6 @@ function updateStatus(selectedTask) {
 
   localStorage.setItem("todo-list", JSON.stringify(todos));
 }
-
 
 showTodo("all");
 taskInput.addEventListener("keyup", (e) => {
@@ -144,19 +142,15 @@ taskInput.addEventListener("keyup", (e) => {
   }
 });
 
-function updateCounter(all, pending, completed){
-  console.log("Hi", all, pending, completed);
+function updateCounter(all, pending, completed) {
   countAll += all;
   countPending += pending;
   countCompleted += completed;
   counterShow();
 }
 
-
 function counterShow() {
   allCount.innerHTML = countAll;
   pendingCount.innerHTML = countPending;
-  completedCount.innerHTML = countCompleted
+  completedCount.innerHTML = countCompleted;
 }
-
-var pending = taskBox.getElementsByTagName("li");
